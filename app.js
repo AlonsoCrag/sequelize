@@ -12,6 +12,10 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 
+app.get('/', (req, resp) => {
+    return resp.send("Application working");
+});
+
 app.post('/verify', async (req, resp) => {
     console.log("New POST request")
     console.log("Data", req.body);
