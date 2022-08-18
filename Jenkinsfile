@@ -17,7 +17,7 @@ pipeline {
                 echo "Second step in the hint/app pipeline -> ${developer}"
 
                 sshagent(credentials: ['ssh_key_ubuntu']) {
-                    sh 'ssh -o StrictHostKeyChecking=no root@decrag.xyz ls'
+                    sh 'ssh -oStrictHostKeyChecking=no root@decrag.xyz ls'
                 }
             }
         }
