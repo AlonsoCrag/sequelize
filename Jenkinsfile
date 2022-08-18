@@ -22,7 +22,7 @@ pipeline {
             }
         }
     }
-
+n
     post {
         always {
             echo 'Pipeline was executed'
