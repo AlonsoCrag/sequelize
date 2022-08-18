@@ -16,7 +16,7 @@ pipeline {
                 echo "This is the first step in the hint/app pipeline -> ${developer}"
                 echo "Second step in the hint/app pipeline -> ${developer}"
 
-                sshagent(['ssh_key_ubuntu']) {
+                sshagent(credentials: ['ssh_key_ubuntu']) {
                     sh 'ls'
                 }
             }
