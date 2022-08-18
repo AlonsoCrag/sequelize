@@ -17,7 +17,7 @@ pipeline {
                 echo "Second step in the hint/app pipeline -> ${developer}"
 
                 sshagent(credentials: ['ssh_key_ubuntu']) {
-                    sh 'ls'
+                    sh 'echo "all good with sshagent"'
                 }
             }
         }
