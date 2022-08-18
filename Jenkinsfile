@@ -9,7 +9,7 @@ pipeline {
         stage('hint/app') {
             when {
                 expression {
-                    return false
+                    return true
                 }
             }
             steps {
@@ -17,7 +17,7 @@ pipeline {
                 echo "Second step in the hint/app pipeline -> ${developer}"
 
                 sshagent(credentials: ['ssh_key_ubuntu']) {
-                    sh 'echo "all good with sshagent"'
+                    sh 'ls'
                 }
             }
         }
