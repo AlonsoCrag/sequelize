@@ -9,7 +9,7 @@ pipeline {
         stage('hint/app') {
             when {
                 expression {
-                    return true
+                    branch 'beta-branch'
                 }
             }
             steps {
