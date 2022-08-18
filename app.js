@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors())
 
 app.get('/', (req, resp) => {
-    return resp.send("Application in 18/ago/2022");
+    return resp.send("Application for in 18/ago/2022");
 });
 
 app.post('/verify', async (req, resp) => {
