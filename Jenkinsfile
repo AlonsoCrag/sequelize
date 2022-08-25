@@ -8,11 +8,7 @@ pipeline {
     stages {
         stage('hint/app') {
             when {
-                expression {
-                    echo "branch result example ---> ${branch "elmersonajshadhsjachochis99"}"
-                    echo "branch result here ---> ${branch}"
-                    return true
-                }
+                branch 'beta-branch'
             }
             steps {
                 echo "This is the first step in the hint/app pipeline -> ${developer}"
