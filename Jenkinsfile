@@ -11,6 +11,7 @@ pipeline {
             when {
                 expression {
                     RESULT = branch 'beta-branch'
+                    echo "result -----> ${RESULT}"
                     failStatus = RESULT == true
                     return failStatus
                 }
