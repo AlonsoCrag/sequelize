@@ -22,7 +22,9 @@ pipeline {
         }
 
         stage('test/env') {
-            echo "Fail status value ----> ${failStatus}"
+            steps {
+                echo "Fail status value ----> ${failStatus}"
+            }
         }
 
         stage('deploy/app') {
