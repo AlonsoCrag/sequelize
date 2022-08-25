@@ -8,7 +8,9 @@ pipeline {
     stages {
         stage('hint/app') {
             when {
-                true
+                expression {
+                    return true
+                }
             }
             steps {
                 echo "This is the first step in the hint/app pipeline -> ${developer}"
