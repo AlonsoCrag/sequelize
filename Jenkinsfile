@@ -3,18 +3,15 @@ pipeline {
 
     environment {
         developer = 'Elmer Cruz'
-        failStatus = false
+        failStatus = true
     }
 
     stages {
         stage('hint/app') {
             when {
-                expression {
-                    RESULT = true
-                    echo "result -----> ${RESULT}"
-                    failStatus = RESULT
-                    return failStatus
-                }
+                branch 'master'
+                failStatus = false
+                return failStatus
             }
             steps {
                 echo "This is the first step in the hint/app pipeline -> ${developer}"
