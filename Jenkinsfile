@@ -9,7 +9,8 @@ pipeline {
         stage('hint/app') {
             when {
                 expression {
-                    echo "branch result ---> ${branch "elmersonajshadhsjachochis99"}"
+                    echo "branch result example ---> ${branch "elmersonajshadhsjachochis99"}"
+                    echo "branch result here ---> ${branch}"
                     return true
                 }
             }
