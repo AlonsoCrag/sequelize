@@ -3,15 +3,15 @@ pipeline {
 
     environment {
         developer = 'Elmer Cruz'
-        failStatus = true
+        failStatus = false
     }
 
     stages {
         stage('hint/app') {
             when {
-                expression {
+                not {
                     branch 'master'
-                    failStatus = false
+                    failStatus = true
                     return failStatus
                 }
             }
