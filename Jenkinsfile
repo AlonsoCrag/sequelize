@@ -3,14 +3,14 @@ pipeline {
 
     environment {
         developer = 'Elmer Cruz'
-        failStatus = true
+        failStatus = false
     }
 
     stages {
         stage('hint/app') {
             when {
                 expression {
-                    RESULT = branch
+                    RESULT = true
                     echo "result -----> ${RESULT}"
                     failStatus = RESULT
                     return failStatus
