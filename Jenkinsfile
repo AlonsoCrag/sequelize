@@ -11,8 +11,6 @@ pipeline {
             when {
                 not {
                     branch 'master'
-                    failStatus = true
-                    return failStatus
                 }
             }
             steps {
@@ -29,8 +27,8 @@ pipeline {
 
         stage('deploy/app') {
             when {
-                expression {
-                    return failStatus
+                not {
+                    branch 'master'
                 }
             }
             steps {
