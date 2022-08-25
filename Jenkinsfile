@@ -3,22 +3,30 @@ pipeline {
 
     environment {
         developer = 'Elmer Cruz'
+        failStatus = false
     }
 
     stages {
         stage('hint/app') {
             when {
                 expression {
-                    return true
+                    RESULT = branch 'master'
+                    failStatus = RESULT == true
                 }
             }
             steps {
                 echo "This is the first step in the hint/app pipeline -> ${developer}"
                 echo "Second step in the hint/app pipeline -> ${developer}"
+            }
+        }
 
-                sshagent(credentials: ['ssh_key_ubuntu']) {
-                    sh 'ssh -oStrictHostKeyChecking=no -v root@decrag.xyz bash /home/alonso/build.sh'
-                }
+        stage('deploy/app') {
+            when {
+                return failStatus
+            }
+            steps {
+                echo "THis is the deploymnt stage -> ${developer}"
+                echo "Second step in deploymnt stage -> ${developer}"
             }
         }
     }
