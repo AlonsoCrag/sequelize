@@ -12,6 +12,7 @@ pipeline {
                 expression {
                     RESULT = branch 'master'
                     failStatus = RESULT == true
+                    return failStatus
                 }
             }
             steps {
