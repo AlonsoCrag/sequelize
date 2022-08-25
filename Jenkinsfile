@@ -10,7 +10,7 @@ pipeline {
         stage('hint/app') {
             when {
                 expression {
-                    RESULT = branch == branch 'beta-branch'
+                    RESULT = branch
                     echo "result -----> ${RESULT}"
                     failStatus = RESULT
                     return failStatus
