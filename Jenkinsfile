@@ -10,7 +10,7 @@ pipeline {
         stage('hint/app') {
             when {
                 expression {
-                    ranch 'master'
+                    branch 'master'
                     failStatus = false
                     return failStatus
                 }
