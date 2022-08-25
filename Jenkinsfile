@@ -20,7 +20,7 @@ pipeline {
 
         stage('test/env') {
             steps {
-                echo "Fail status value ----> ${failStatus}"
+                echo "Fail status value"
             }
         }
 
