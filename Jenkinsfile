@@ -10,7 +10,7 @@ pipeline {
         stage('hint/app') {
             when {
                 expression {
-                    RESULT = branch 'master'
+                    RESULT = branch 'beta-branch'
                     failStatus = RESULT == true
                     return failStatus
                 }
