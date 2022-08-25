@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('hint/app') {
             when {
-                branch 'master'
+                branch 'beta-branch'
             }
             steps {
                 echo "This is the first step in the hint/app pipeline -> ${developer}"
