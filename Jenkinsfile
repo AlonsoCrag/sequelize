@@ -23,7 +23,9 @@ pipeline {
 
         stage('deploy/app') {
             when {
-                return failStatus
+                expression {
+                    return failStatus
+                }
             }
             steps {
                 echo "THis is the deploymnt stage -> ${developer}"
