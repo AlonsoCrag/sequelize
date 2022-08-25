@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         developer = 'Elmer Cruz'
-        failStatus = false
+        failStatus = true
     }
 
     stages {
