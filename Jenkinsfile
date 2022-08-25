@@ -21,6 +21,10 @@ pipeline {
             }
         }
 
+        stage('test/env') {
+            echo "Fail status value ----> ${failStatus}"
+        }
+
         stage('deploy/app') {
             when {
                 expression {
