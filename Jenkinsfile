@@ -9,9 +9,11 @@ pipeline {
     stages {
         stage('hint/app') {
             when {
-                branch 'master'
-                failStatus = false
-                return failStatus
+                expression {
+                    ranch 'master'
+                    failStatus = false
+                    return failStatus
+                }
             }
             steps {
                 echo "This is the first step in the hint/app pipeline -> ${developer}"
