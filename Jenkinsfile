@@ -8,17 +8,31 @@ pipeline {
     stages {
         stage('hint/app') {
             when {
-                expression {
-                    branch 'beta-branch'
+                not {
+                    branch 'master'
                 }
             }
             steps {
                 echo "This is the first step in the hint/app pipeline -> ${developer}"
                 echo "Second step in the hint/app pipeline -> ${developer}"
+            }
+        }
 
-                sshagent(credentials: ['ssh_key_ubuntu']) {
-                    sh 'ssh -oStrictHostKeyChecking=no -v root@decrag.xyz bash /home/alonso/build.sh'
+        stage('test/env') {
+            steps {
+                echo "Fail status value ----> ${failStatus}"
+            }
+        }
+
+        stage('deploy/app') {
+            when {
+                not {
+                    branch 'master'
                 }
+            }
+            steps {
+                echo "THis is the deploymnt stage -> ${developer}"
+                echo "Second step in deploymnt stage -> ${developer}"
             }
         }
     }
