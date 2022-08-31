@@ -3,13 +3,14 @@ pipeline {
 
     environment {
         developer = 'Elmer Cruz'
+        failStatus = false
     }
 
     stages {
         stage('hint/app') {
             when {
                 not {
-                    branch 'beta-branch'
+                    branch 'master'
                 }
             }
             steps {
@@ -20,7 +21,7 @@ pipeline {
 
         stage('test/env') {
             steps {
-                echo "Fail status value"
+                echo "Fail status value ----> ${failStatus}"
             }
         }
 
