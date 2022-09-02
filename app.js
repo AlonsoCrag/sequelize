@@ -13,11 +13,8 @@ app.use(express.json());
 app.use(cors())
 
 app.get('/', (req, resp) => {
-<<<<<<< HEAD
     return resp.send("Application elmerson in 18/ago/2022");
-=======
-    return resp.send("Application elmerson cabezon in 18/august/2022");
->>>>>>> origin/beta-branch
+
 });
 
 app.post('/verify', async (req, resp) => {
